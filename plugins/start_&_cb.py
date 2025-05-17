@@ -52,8 +52,8 @@ upgrade_trial_button = InlineKeyboardMarkup([[
 @Client.on_message(filters.private & filters.command("start"))
 async def start(client, message):
     start_button = [[        
-        InlineKeyboardButton('Uᴩᴅᴀ𝚃ᴇꜱ', url='@Suh0_kang'),
-        InlineKeyboardButton('Sᴜᴩᴩᴏʀ𝚃', url='@Suh0_kang')
+        InlineKeyboardButton('Uᴩᴅᴀ𝚃ᴇꜱ', url=''),
+        InlineKeyboardButton('Sᴜᴩᴩᴏʀ𝚃', url='')
         ],[
         InlineKeyboardButton('Aʙᴏυᴛ', callback_data='about'),
         InlineKeyboardButton('Hᴇʟᴩ', callback_data='help')       

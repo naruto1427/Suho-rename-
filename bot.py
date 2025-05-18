@@ -138,7 +138,7 @@ if __name__ == "__main__":
         main()
     except errors.FloodWait as ft:
         print(f"Flood Wait Occured, Sleeping For {ft}")
-        await asyncio.sleep(ft.value)
+             asyncio.sleep(ft.value)
         print("Now Ready For Deploying !")
         main()
     

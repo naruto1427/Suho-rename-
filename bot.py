@@ -116,17 +116,17 @@ class DigitalRenameBot(Client):
         await super().stop()
         
 
-bot_instance = suhorenamebot()
+bot_instance = DigitalRenameBot()
 
-def main():
-    async def start_services():
+async def start_services():
     try:
         await asyncio.gather(bot_instance.start())  # Start the bot instance
-    except FloodWait as ft:
+    except errors.FloodWait as ft:
         print(f"Flood Wait Occurred, Sleeping For {ft.value} seconds")
         await asyncio.sleep(ft.value)
         await asyncio.gather(bot_instance.start())  # Retry after waiting
-                  
+
+def main():
     loop = asyncio.get_event_loop()
     loop.run_until_complete(start_services())
     loop.run_forever()
@@ -136,9 +136,10 @@ if __name__ == "__main__":
     try:
         main()
     except errors.FloodWait as ft:
-        print(f"Flood Wait Occured, Sleeping For {ft}")
-             asyncio.sleep(ft.value)
-        print("Now Ready For Deploying !")
+        print(f"Flood Wait Occurred, Sleeping For {ft.value} seconds")
+        import time
+        time.sleep(ft.value)
+        print("Now Ready For Deploying!")
         main()
     
 

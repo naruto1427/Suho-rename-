@@ -25,6 +25,7 @@ import logging
 import logging.config
 import glob, sys, importlib, pyromod
 from pathlib import Path
+import importlib.util
 
 # pyrogram imports
 import pyrogram.utils
